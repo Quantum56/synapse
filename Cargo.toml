@@ -1,0 +1,24 @@
+[package]
+name = "synapse"
+version = "0.1.0"
+edition = "2024"
+readme = "./README.md"
+
+[[bin]]
+name = "synapse"
+
+[dependencies]
+lazy_static = { version = "1.5.0", features = ["spin_no_std"] }
+limine = "0.4.0"
+serial = "0.4.0"
+spin = "0.9.8"
+syn_syscall = { path = "./syn_syscall" }
+volatile = "0.2.6"
+x86 = "0.52.0"
+x86_64 = "0.15.2"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
